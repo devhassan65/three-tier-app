@@ -17,7 +17,7 @@ services:
       retries: 3
 
   backend:
-    build: ghcr.io/devhassan65/three-tier-app-backend
+    build: ghcr.io/devhassan65/three-tier-app-backend:latest
     ports:
       - "5000:5000"
     depends_on:
@@ -35,7 +35,7 @@ services:
       retries: 3
 
   frontend:
-    build: ghcr.io/devhassan65/three-tier-app-frontend
+    build: ghcr.io/devhassan65/three-tier-app-frontend:latest
     ports:
       - "3000:3000"
     depends_on:

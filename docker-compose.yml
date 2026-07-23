@@ -17,7 +17,7 @@ services:
       retries: 3
 
   backend:
-    build:660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-backend:latest
+    image: 660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-backend:latest
     ports:
       - "5000:5000"
     depends_on:
@@ -35,7 +35,7 @@ services:
       retries: 3
 
   frontend:
-    build: 660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-frontend:latest
+    image: 660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-frontend:latest
     ports:
       - "3000:3000"
     depends_on:

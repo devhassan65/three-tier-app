@@ -4,6 +4,7 @@ version: '3.8'
 services:
   database:
     image: mongo
+    Container_name: mongo-3
     ports:
       - "27017:27017"
     volumes:
@@ -17,9 +18,10 @@ services:
       retries: 3
 
   backend:
-    image: 660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-backend:latest
+    image: ${BACKEND_IMAGE}
+    Container_name: backend
     ports:
-      - "5000:5000"
+      - "5003:5000"
     depends_on:
       - database
     env_file:
@@ -35,9 +37,10 @@ services:
       retries: 3
 
   frontend:
-    image: 660999304559.dkr.ecr.us-east-1.amazonaws.com/three-tier-app-frontend:latest
+    image: ${FRONTEND_IMAGE}
+    Container_name: frontend
     ports:
-      - "3000:3000"
+      - "3003:3000"
     depends_on:
       - backend
     user: "1000:1000"

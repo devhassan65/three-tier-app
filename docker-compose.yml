@@ -19,6 +19,7 @@ services:
 
   backend:
     image: ${BACKEND_IMAGE}
+    Container_name: backend
     ports:
       - "5002:5000"
     depends_on:
@@ -37,6 +38,7 @@ services:
 
   frontend:
     image: ${FRONTEND_IMAGE}
+    Container_name: frontend
     ports:
       - "3002:3000"
     depends_on:

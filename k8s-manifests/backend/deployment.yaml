@@ -45,6 +45,8 @@ spec:
               port: 5000
             initialDelaySeconds: 15
             periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
 
           readinessProbe:
             httpGet:
@@ -52,5 +54,7 @@ spec:
               port: 5000
             initialDelaySeconds: 10
             periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
 
 

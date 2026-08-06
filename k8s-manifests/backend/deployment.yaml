@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: hassanzia65/three-tier-backend:v1
+          image: hassanzia65/three-tier-backend:v7
 
           ports:
             - containerPort: 5000
